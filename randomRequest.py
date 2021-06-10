@@ -1,5 +1,8 @@
+from random import choice
 
 proxy_type = ['elite','anonymous','transparent']
+with open('useragents.txt') as f:
+    agents = [line.rstrip() for line in f]
 
 class randomRequest():
 	def __init__(self,**kwargs):
@@ -39,7 +42,7 @@ class randomRequest():
 		return 'random_proxy'
 	def getUserAgent(self):
 		#include some paramets that can filter the random selection of useragent
-		return 'random user-agent'
+		return choice(agents)
 
 
 
